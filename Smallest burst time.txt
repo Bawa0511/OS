@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+      int burst_time[10], temp[10];
+      int i, smallest, count = 0, time, limit;
+      double wait_time = 0, turnaround_time = 0, end;
+      float average_waiting_time, average_turnaround_time;
+
+      printf("\nEnter the Total Number of Processes:\t");
+      scanf("%d", &limit);
+      printf("\nEnter Details of %d Processes\n", limit);
+
+      for(i = 0; i < limit; i++)
+      {
+            printf("Enter Burst Time:\t");
+            scanf("%d", &burst_time[i]);
+            temp[i] = burst_time[i];
+      }
+
+      smallest=burst_time[0];
+      for(i = 1; i < limit; i++)
+      {
+          if(smallest>burst_time[i])
+          {
+              smallest=burst_time[i];
+          }
+      }
+      printf("\nsmallest: %d",smallest);
+
+      return 0;
+}
