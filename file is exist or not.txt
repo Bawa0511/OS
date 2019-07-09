@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/stat.h>
+#include <time.h>
+
+int main()
+{
+    char path[100];
+    struct stat source;
+    printf("enter source file path:");
+    scanf("%s",path);
+
+    if(stat(path,&source)==0)
+    {
+        printf("file description is valid");
+    }
+    else
+    {
+        printf("unable to get file properties\n");
+        printf("please check wheather file exists\n",path);
+    }
+    return 0;
+}
